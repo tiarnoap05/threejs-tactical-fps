@@ -648,13 +648,14 @@ function runShot(name) {
       bot.state = 'hold';
       bot.path = [];
     });
-    settle(6);
+    settle(25);
     const target = foes[0];
     tmpVec.copy(target.pos);
     tmpVec.y += 1.2;
     aimAt(tmpVec);
     shoot();
-    settle(2);
+    hud.hideBanner();
+    settle(5);
     hud.setScore(0, 0, 1, 'A');
   } else if (name === 'buy') {
     match.state.buyLeft = 8;

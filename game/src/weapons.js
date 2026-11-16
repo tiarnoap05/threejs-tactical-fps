@@ -53,7 +53,7 @@ export function createLoadout(camera) {
       group.add(scope);
     }
     const flash = new THREE.Mesh(
-      new THREE.PlaneGeometry(0.26, 0.26),
+      new THREE.PlaneGeometry(0.14, 0.14),
       new THREE.MeshBasicMaterial({ color: new THREE.Color(PALETTE.accent), transparent: true, opacity: 0.9, depthWrite: false, side: THREE.DoubleSide }),
     );
     flash.position.set(0, 0.025, -(dims[2] / 2 + dims[3] - 0.02));

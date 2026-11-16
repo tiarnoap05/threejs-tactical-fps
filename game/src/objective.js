@@ -42,8 +42,8 @@ export function createObjective(scene) {
   let plantedSite = null;
   let blink = 0;
 
-  function setCarrier(next) {
-    carrier = next;
+  function setCarrier(actor) {
+    carrier = { ref: actor };
     status = 'carried';
     group.visible = false;
   }
@@ -93,7 +93,7 @@ export function createObjective(scene) {
         const dx = a.pos.x - group.position.x;
         const dz = a.pos.z - group.position.z;
         if (dx * dx + dz * dz < 1.44) {
-          setCarrier({ kind: a.kind, ref: a.ref });
+          setCarrier(a.ref);
           return carrier;
         }
       }

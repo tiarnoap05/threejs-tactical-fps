@@ -231,6 +231,10 @@ export function createHud(colliders, sites, onPlay) {
         bannerEl.hidden = true;
       }, ms);
     },
+    hideBanner() {
+      clearTimeout(bannerTimer);
+      bannerEl.hidden = true;
+    },
     showBuy(items, money) {
       buyMenu.hidden = false;
       buyMoney.textContent = `$${money}`;
